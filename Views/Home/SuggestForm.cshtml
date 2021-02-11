@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Header = "Make Suggestions on Top Restaurants";
+    ViewBag.Title = "Suggest";
+}
+
+@model FoodieApp.Models.Suggestion
+<body>
+    <div class="text-center">
+        <form method="post" asp-action="SuggestForm" class="align-left" id="movie-form">@*Form to submit suggestions of top restaurants*@
+            <div>
+                <label asp-for="UserName">Your Name:</label>
+                <input asp-for="UserName" />
+            </div>
+            <div>
+                <label asp-for="Name">Restaurant Name:</label>
+                <input asp-for="Name" />
+            </div>
+            <div>
+                <label asp-for="FavDish">Favorite Dish:</label>
+                <input asp-for="FavDish" />
+            </div>
+            <div>
+                <label asp-for="Phone">Restaurant Phone Number:</label>
+                <input asp-for="Phone" />
+            </div>
+            <br />
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark">Make Suggestion</button> @*Bootstrap styling on submit button*@
+            </div>
+        </form>
+        <br /><br />
+        <div asp-validation-summary="All" class="align-left"></div>
+    </div>
+</body>

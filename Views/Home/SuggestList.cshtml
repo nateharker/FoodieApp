@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Header = "List of Suggestions";
+    ViewBag.Title = "Suggestions";
+}
+
+@model IEnumerable<FoodieApp.Models.Suggestion>
+<body>
+    @if (Model.Count() < 1) @*This checks to see if suggestions have been submitted yet, if not, it will display a message stating so*@
+    {
+        <h3 class="text-center">No suggestions have been submitted yet.</h3>
+    }
+    else
+    {
+        <div>
+            <table id="movies-table">
+                <thead>
+                    <tr><th>Suggester Name</th><th>Restaurant Name</th><th>Favorite Dish</th><th>Restaurant Phone Number</th></tr>
+                </thead>
+                <tbody>
+                    @*output each response in the Suggetions list into the following table*@
+                    @foreach (FoodieApp.Models.Suggestion s in Model)
+                    {
+                        <tr>
+                            <td>@s.UserName</td>
+                            <td>@s.Name</td>
+                            <td>@s.FavDish</td>
+                            <td>@s.Phone</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</body>

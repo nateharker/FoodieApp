@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Header = "Top 5 Restuarants in the Provo Area";
+    ViewBag.Title = "Home";
+}
+
+@model IEnumerable<string>
+
+<body class="text-center">
+    <img src="~/img/home-pic.jpg" width="900"/>
+    <br /><br />
+    <ul class="home-list align-left">
+        @foreach (string restaurant in Model) @*Iterates through the strings passed in from the controller and displays them one at a time*@
+        {
+            <li>@Html.Raw(restaurant)</li>
+            <br />
+        }
+    </ul>
+</body>

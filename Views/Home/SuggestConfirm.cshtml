@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Header = "Confirmation";
+    ViewBag.Title = "Confirmation";
+}
+
+<body class="text-center">
+    <h3>Congratulations, your response has been added to the list!</h3>
+    <br />
+    <a asp-action="SuggestForm" class="btn btn-dark">Submit Another Suggestion</a>  @*Bootstrap styling on both buttons on this page*@
+    <br /><br />
+    <h3>OR</h3>
+    <br />
+    <a asp-action="SuggestList" class="btn btn-dark">View List</a>
+</body>
